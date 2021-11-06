@@ -36,6 +36,19 @@ class _QuestionState extends State<Question> {
     4,
   ];
 
+  List<String> explanations = [
+    '第1問の解説...',
+    '第2問の解説...',
+    '第3問の解説...',
+    '第4問の解説...',
+    '第5問の解説...',
+    '第6問の解説...',
+    '第7問の解説...',
+    '第8問の解説...',
+    '第9問の解説...',
+    '第10問の解説...',
+  ];
+
   // current  number
   int questionNumber = 0;
   // correct number
@@ -77,15 +90,42 @@ class _QuestionState extends State<Question> {
                   });
                 }
                 if (questionNumber + 1 < questions.length) {
-                  setState(() {
-                    questionNumber++;
-                  });
+                  return showDialog<void>(
+                    context: context,
+                    barrierDismissible: false, // user must tap button!
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('解答と解説'),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: <Widget>[
+                              Text('正答： ${correctAnswer.toString()}'),
+                              Text('${explanations[questionNumber]}'),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            child: const Text('Next'),
+                            onPressed: () {
+                              setState(() {
+                                questionNumber++;
+                              });
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
+
                 } else {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => Result(
-                        numberOfCorrectAnswer: numberOfCorrectAnswer,),
+                        numberOfCorrectAnswer: numberOfCorrectAnswer,
+                      ),
                     ),
                   );
                 }
@@ -100,15 +140,41 @@ class _QuestionState extends State<Question> {
                   });
                 }
                 if (questionNumber + 1 < questions.length) {
-                  setState(() {
-                    questionNumber++;
-                  });
+                  return showDialog<void>(
+                    context: context,
+                    barrierDismissible: false, // user must tap button!
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('解答と解説'),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: <Widget>[
+                              Text('正答： ${correctAnswer.toString()}'),
+                              Text('${explanations[questionNumber]}'),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            child: const Text('Next'),
+                            onPressed: () {
+                              setState(() {
+                                questionNumber++;
+                              });
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 } else {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => Result(
-                        numberOfCorrectAnswer: numberOfCorrectAnswer,),
+                        numberOfCorrectAnswer: numberOfCorrectAnswer,
+                      ),
                     ),
                   );
                 }
@@ -123,15 +189,41 @@ class _QuestionState extends State<Question> {
                   });
                 }
                 if (questionNumber + 1 < questions.length) {
-                  setState(() {
-                    questionNumber++;
-                  });
+                  return showDialog<void>(
+                    context: context,
+                    barrierDismissible: false, // user must tap button!
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('解答と解説'),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: <Widget>[
+                              Text('正答： ${correctAnswer.toString()}'),
+                              Text('${explanations[questionNumber]}'),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            child: const Text('Next'),
+                            onPressed: () {
+                              setState(() {
+                                questionNumber++;
+                              });
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 } else {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => Result(
-                        numberOfCorrectAnswer: numberOfCorrectAnswer,),
+                        numberOfCorrectAnswer: numberOfCorrectAnswer,
+                      ),
                     ),
                   );
                 }
@@ -146,15 +238,41 @@ class _QuestionState extends State<Question> {
                   });
                 }
                 if (questionNumber + 1 < questions.length) {
-                  setState(() {
-                    questionNumber++;
-                  });
+                  return showDialog<void>(
+                    context: context,
+                    barrierDismissible: false, // user must tap button!
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('解答と解説'),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: <Widget>[
+                              Text('正答： ${correctAnswer.toString()}'),
+                              Text('${explanations[questionNumber]}'),
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            child: const Text('Next'),
+                            onPressed: () {
+                              setState(() {
+                                questionNumber++;
+                              });
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
                 } else {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => Result(
-                        numberOfCorrectAnswer: numberOfCorrectAnswer,),
+                        numberOfCorrectAnswer: numberOfCorrectAnswer,
+                      ),
                     ),
                   );
                 }
