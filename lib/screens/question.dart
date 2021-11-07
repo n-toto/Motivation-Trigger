@@ -83,203 +83,96 @@ class _QuestionState extends State<Question> {
           OptionButton(
               text: 'option1',
               onPress: () {
-                int correctAnswer = answers[questionNumber];
-                if (correctAnswer == 1) {
-                  setState(() {
-                    numberOfCorrectAnswer++;
-                  });
-                }
-                if (questionNumber + 1 < questions.length) {
-                  return showDialog<void>(
-                    context: context,
-                    barrierDismissible: false, // user must tap button!
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: const Text('解答と解説'),
-                        content: SingleChildScrollView(
-                          child: ListBody(
-                            children: <Widget>[
-                              Text('正答： ${correctAnswer.toString()}'),
-                              Text('${explanations[questionNumber]}'),
-                            ],
-                          ),
-                        ),
-                        actions: <Widget>[
-                          TextButton(
-                            child: const Text('Next'),
-                            onPressed: () {
-                              setState(() {
-                                questionNumber++;
-                              });
-                              Navigator.of(context).pop();
-                            },
-                          ),
-                        ],
-                      );
-                    },
-                  );
-
-                } else {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Result(
-                        numberOfCorrectAnswer: numberOfCorrectAnswer,
-                      ),
-                    ),
-                  );
-                }
+                return showDialog<void>(
+                  context: context,
+                  barrierDismissible: false, // user must tap button!
+                  builder: (BuildContext context) {
+                    return buildExplanationDialog(1, context);
+                  },
+                );
               }),
           OptionButton(
               text: 'option2',
               onPress: () {
-                int correctAnswer = answers[questionNumber];
-                if (correctAnswer == 2) {
-                  setState(() {
-                    numberOfCorrectAnswer++;
-                  });
-                }
-                if (questionNumber + 1 < questions.length) {
-                  return showDialog<void>(
-                    context: context,
-                    barrierDismissible: false, // user must tap button!
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: const Text('解答と解説'),
-                        content: SingleChildScrollView(
-                          child: ListBody(
-                            children: <Widget>[
-                              Text('正答： ${correctAnswer.toString()}'),
-                              Text('${explanations[questionNumber]}'),
-                            ],
-                          ),
-                        ),
-                        actions: <Widget>[
-                          TextButton(
-                            child: const Text('Next'),
-                            onPressed: () {
-                              setState(() {
-                                questionNumber++;
-                              });
-                              Navigator.of(context).pop();
-                            },
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                } else {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Result(
-                        numberOfCorrectAnswer: numberOfCorrectAnswer,
-                      ),
-                    ),
-                  );
-                }
+                return showDialog<void>(
+                  context: context,
+                  barrierDismissible: false, // user must tap button!
+                  builder: (BuildContext context) {
+                    return buildExplanationDialog(2, context);
+                  },
+                );
               }),
           OptionButton(
               text: 'option3',
               onPress: () {
-                int correctAnswer = answers[questionNumber];
-                if (correctAnswer == 3) {
-                  setState(() {
-                    numberOfCorrectAnswer++;
-                  });
-                }
-                if (questionNumber + 1 < questions.length) {
-                  return showDialog<void>(
-                    context: context,
-                    barrierDismissible: false, // user must tap button!
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: const Text('解答と解説'),
-                        content: SingleChildScrollView(
-                          child: ListBody(
-                            children: <Widget>[
-                              Text('正答： ${correctAnswer.toString()}'),
-                              Text('${explanations[questionNumber]}'),
-                            ],
-                          ),
-                        ),
-                        actions: <Widget>[
-                          TextButton(
-                            child: const Text('Next'),
-                            onPressed: () {
-                              setState(() {
-                                questionNumber++;
-                              });
-                              Navigator.of(context).pop();
-                            },
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                } else {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Result(
-                        numberOfCorrectAnswer: numberOfCorrectAnswer,
-                      ),
-                    ),
-                  );
-                }
+                return showDialog<void>(
+                  context: context,
+                  barrierDismissible: false, // user must tap button!
+                  builder: (BuildContext context) {
+                    return buildExplanationDialog(3, context);
+                  },
+                );
               }),
           OptionButton(
               text: 'option4',
               onPress: () {
-                int correctAnswer = answers[questionNumber];
-                if (correctAnswer == 4) {
-                  setState(() {
-                    numberOfCorrectAnswer++;
-                  });
-                }
-                if (questionNumber + 1 < questions.length) {
-                  return showDialog<void>(
-                    context: context,
-                    barrierDismissible: false, // user must tap button!
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: const Text('解答と解説'),
-                        content: SingleChildScrollView(
-                          child: ListBody(
-                            children: <Widget>[
-                              Text('正答： ${correctAnswer.toString()}'),
-                              Text('${explanations[questionNumber]}'),
-                            ],
-                          ),
-                        ),
-                        actions: <Widget>[
-                          TextButton(
-                            child: const Text('Next'),
-                            onPressed: () {
-                              setState(() {
-                                questionNumber++;
-                              });
-                              Navigator.of(context).pop();
-                            },
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                } else {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Result(
-                        numberOfCorrectAnswer: numberOfCorrectAnswer,
-                      ),
-                    ),
-                  );
-                }
+                return showDialog<void>(
+                  context: context,
+                  barrierDismissible: false, // user must tap button!
+                  builder: (BuildContext context) {
+                    return buildExplanationDialog(4, context);
+                  },
+                );
               }),
         ],
       ),
     ));
+  }
+
+  AlertDialog buildExplanationDialog(int optionNum, BuildContext context) {
+    bool isCorrect = (optionNum == answers[questionNumber]);
+    return AlertDialog(
+      title: const Text('解答と解説'),
+      contentPadding: const EdgeInsets.all(40.0),
+      content: SingleChildScrollView(
+        child: ListBody(
+          children: <Widget>[
+            Text('正答： ${answers[questionNumber].toString()}'),
+            Text('あなたの解答： ${optionNum.toString()}'),
+            Text(explanations[questionNumber]),
+          ],
+        ),
+      ),
+      actions: <Widget>[
+        TextButton(
+          style: TextButton.styleFrom(
+            backgroundColor: Color(0xFFe91e63),
+          ),
+          child: const Text('Next', style: TextStyle(color: Colors.white)),
+          onPressed: () {
+            if (isCorrect)
+              setState(() {
+                numberOfCorrectAnswer++;
+              });
+            if (questionNumber+1 < questions.length) {
+              setState(() {
+                questionNumber++;
+              });
+              Navigator.of(context).pop();
+            } else {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Result(
+                    numberOfCorrectAnswer: numberOfCorrectAnswer,
+                  ),
+                ),
+              );
+            }
+          },
+        ),
+      ],
+    );
   }
 }
 
