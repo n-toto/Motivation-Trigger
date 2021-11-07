@@ -13,7 +13,7 @@ class Result extends StatelessWidget {
         appBar: AppBar(
           title: Text('結果'),
           leading: Icon(Icons.book),
-          backgroundColor: Color(0xFFe91e63),
+          backgroundColor: Color(0xFF444974),
         ),
         backgroundColor: Color(0xFFF5F5F6),
         body: Column(
@@ -55,7 +55,7 @@ class Result extends StatelessWidget {
                     ),
                   ),
                   style: TextButton.styleFrom(
-                    primary: Color(0xFFccdb37),
+                    primary: Color(0xFF444974),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
