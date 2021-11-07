@@ -12,7 +12,7 @@ class Start extends StatelessWidget {
           leading: Icon(Icons.book),
           backgroundColor: Color(0xFF444974),
         ),
-        backgroundColor: Color(0xFFF5F5F6),
+        backgroundColor: Color(0xFF444974),
         body: SafeArea(
           child: StartPage(),
         ),
