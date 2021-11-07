@@ -295,7 +295,7 @@ class _AlarmPageState extends State<AlarmPage> {
     var platformChannelSpecifics = NotificationDetails(
         androidPlatformChannelSpecifics, iOSPlatformChannelSpecifics);
 
-    await flutterLocalNotificationsPlugin.schedule(0, 'Office', alarmInfo.title,
+    await flutterLocalNotificationsPlugin.schedule(0, 'Motivation Trigger', alarmInfo.title,
         scheduledNotificationDateTime, platformChannelSpecifics);
   }
 
