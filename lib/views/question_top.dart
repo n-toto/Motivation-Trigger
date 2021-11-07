@@ -10,7 +10,7 @@ class Start extends StatelessWidget {
         appBar: AppBar(
           title: Text("Motivation Trigger"),
           leading: Icon(Icons.book),
-          backgroundColor: Color(0xFFe91e63),
+          backgroundColor: Color(0xFF444974),
         ),
         backgroundColor: Color(0xFFF5F5F6),
         body: SafeArea(
@@ -56,7 +56,7 @@ class _StartPageState extends State<StartPage> {
             margin: const EdgeInsets.symmetric(horizontal: 50.0),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              color: Color(0xFFccdb37),
+              color: Color(0xFF444974),
             ),
             child: TextButton(
               onPressed: () {
@@ -70,7 +70,7 @@ class _StartPageState extends State<StartPage> {
                 style: TextStyle(color: Colors.white),
               ),
               style: TextButton.styleFrom(
-                backgroundColor: Color(0xFFccdb37),
+                backgroundColor: Color(0xFF748EF6),
               ),
             ),
           ),

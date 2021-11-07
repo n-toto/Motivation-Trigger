@@ -61,7 +61,7 @@ class _QuestionState extends State<Question> {
           appBar: AppBar(
             title: Text("問題"),
             leading: Icon(Icons.book),
-            backgroundColor: Color(0xFFe91e63),
+            backgroundColor: Color(0xFF444974),
           ),
           backgroundColor: Color(0xFFF5F5F6),
           body: Column(
@@ -146,7 +146,7 @@ class _QuestionState extends State<Question> {
       actions: <Widget>[
         TextButton(
           style: TextButton.styleFrom(
-            backgroundColor: Color(0xFFe91e63),
+            backgroundColor: Color(0xFF444974),
           ),
           child: const Text('Next', style: TextStyle(color: Colors.white)),
           onPressed: () {
@@ -196,7 +196,7 @@ class OptionButton extends StatelessWidget {
             ),
           ),
           style: ElevatedButton.styleFrom(
-            primary: Color(0xFFccdb37),
+            primary: Colors.orange[300],
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),
             ),
